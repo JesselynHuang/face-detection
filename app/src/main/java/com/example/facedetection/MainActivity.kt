@@ -53,7 +53,6 @@ class MainActivity : AppCompatActivity() {
         cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 
         previewCamera()
-
     }
 
 
