@@ -16,51 +16,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <View-->
-<!--        android:id="@+id/graphic_overlay"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="match_parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/preview_view" />-->
 
-<!--    <include-->
-<!--        android:id="@+id/settings_button"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintRight_toRightOf="@id/preview_view"-->
-<!--        app:layout_constraintTop_toTopOf="@id/preview_view" />-->
+    <com.otaliastudios.cameraview.CameraView
+        android:id="@+id/viewfinder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:keepScreenOn="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <android.widget.Spinner-->
-<!--        android:id="@+id/spinner"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:layout_weight="1"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/preview_view"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/preview_view" />-->
+    <com.example.facedetection.Frame
+        android:id="@+id/FrameView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <ToggleButton-->
-<!--        android:id="@+id/facing_switch"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="48dp"-->
-<!--        android:layout_gravity="center_vertical"-->
-<!--        android:checked="false"-->
-<!--        android:textOff=""-->
-<!--        android:textOn=""-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/spinner"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/spinner"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/spinner" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/button"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Camera"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <ToggleButton
+        android:id="@+id/bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="@+id/preview_view"
+        app:layout_constraintTop_toTopOf="@+id/preview_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

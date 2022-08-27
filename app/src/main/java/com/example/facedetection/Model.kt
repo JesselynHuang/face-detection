@@ -9,5 +9,5 @@ data class Model (
             val rotation: Int,
             val size: Size,
             val format: Int,
-            val lensFacing: CameraSelector.LensFacing
+            val lensFacing: LensFacing
 )
