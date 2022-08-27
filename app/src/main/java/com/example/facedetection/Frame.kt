@@ -9,7 +9,8 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
 
-class Frame constructor(ctx: Context, attrs: AttributeSet? = null) : View(ctx, attrs){
+//@JvmOverload -> generate multiple constructor
+class Frame @JvmOverloads constructor(ctx: Context, attrs: AttributeSet? = null) : View(ctx, attrs){
     private val faceBound = mutableListOf<com.example.facedetection.FaceBounds>()
     private val anchorPaint = Paint()
     private val idPaint = Paint()
@@ -59,10 +60,13 @@ class Frame constructor(ctx: Context, attrs: AttributeSet? = null) : View(ctx, a
         return PointF(centerX, centerY)
     }
 
+//    public void addFrameProcessor(FrameProcessor )
+
     // Notes
     // Companion object --> used to define variable and methods / static variable
 
     companion object {
+        // f -> float
         private const val ANCHOR_RADIUS = 10f
         private const val ID_OFFSET = 50f
     }
