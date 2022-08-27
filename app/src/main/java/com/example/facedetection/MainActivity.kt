@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
         val lensFacing =
             savedInstanceState?.getSerializable(KEY_LENS_FACING) as Facing? ?: Facing.BACK
-        onClickPermission(viewfinder)
+        onClickPermission(cameraPreview)
         setupCamera(lensFacing)
     }
 
@@ -54,43 +54,43 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         //viewfinder.start()
         //viewfinder.onStartTemporaryDetach()
-        viewfinder.open()
+        cameraPreview.open()
 
     }
 
     override fun onPause() {
         super.onPause()
-        viewfinder.close()
+        cameraPreview.close()
         //viewfinder.stopVideo()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
-        outState.putSerializable(KEY_LENS_FACING, viewfinder.facing)
+        outState.putSerializable(KEY_LENS_FACING, cameraPreview.facing)
         super.onSaveInstanceState(outState)
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        viewfinder.destroy()
+        cameraPreview.destroy()
     }
 
     private fun setupCamera(lensFacing: Facing) {
         val faceDetector = Detector(FrameView)
-        viewfinder.facing = lensFacing
-        viewfinder.addFrameProcessor {
+        cameraPreview.facing = lensFacing
+        cameraPreview.addFrameProcessor {
             faceDetector.process(
                 Model (
                     data = it.getData(),
                     rotation = it.rotationToUser,
                     size = Size(it.size.width, it.size.height),
                     format = it.format,
-                    lensFacing = if (viewfinder.facing == Facing.BACK) LensFacing.BACK else LensFacing.FRONT
+                    lensFacing = if (cameraPreview.facing == Facing.BACK) LensFacing.BACK else LensFacing.FRONT
                 )
             )
         }
 
         bottom.setOnClickListener {
-            viewfinder.toggleFacing()
+            cameraPreview.toggleFacing()
         }
     }
 

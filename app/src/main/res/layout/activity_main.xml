@@ -18,7 +18,7 @@
 
 
     <com.otaliastudios.cameraview.CameraView
-        android:id="@+id/viewfinder"
+        android:id="@+id/cameraPreview"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:keepScreenOn="true"
